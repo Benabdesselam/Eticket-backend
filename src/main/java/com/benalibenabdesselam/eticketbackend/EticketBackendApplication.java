@@ -1,5 +1,6 @@
 package com.benalibenabdesselam.eticketbackend;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,5 +30,7 @@ public class EticketBackendApplication {
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(urlBasedCorsConfigurationSource);
+
     }
+
 }
