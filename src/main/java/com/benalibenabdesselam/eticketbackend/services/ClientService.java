@@ -23,6 +23,9 @@ public class ClientService {
         return clientRepository.save(client);
 
     }
+    public Client findClientByUser(Long userID){
+        return clientRepository.findClientByUserId(userID);
+    }
 
     public Client findClientById(Long id){
         return clientRepository.findClientById(id);

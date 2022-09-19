@@ -22,6 +22,11 @@ public class ClientRestAPI {
         List<Client> clients=clientService.findAllClients();
         return new ResponseEntity<>(clients, HttpStatus.OK);
     }
+    @GetMapping("/myClient")
+    public ResponseEntity<Client> getClient(Long userId){
+        Client client=clientService.findClientByUser(userId);
+        return new ResponseEntity<>(client, HttpStatus.OK);
+    }
 
     @GetMapping("/findClient/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable("id")Long id){

@@ -26,5 +26,7 @@ public class Client {
     @OneToMany(mappedBy = "client",fetch = FetchType.LAZY)
         @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Ticket> tickets;
+    @OneToOne
+    private User user;
 
 }

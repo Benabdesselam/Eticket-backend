@@ -16,6 +16,8 @@ public interface ClientRepository extends JpaRepository<Client,Long> {
 
     Optional<Client> findTicketById(Long id);
 
+    Client findClientByUserId(Long userId);
+
     void deleteClientById(Long id);
 
     Client findClientById(Long id);

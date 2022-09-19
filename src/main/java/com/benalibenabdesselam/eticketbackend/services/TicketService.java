@@ -5,6 +5,7 @@ import com.benalibenabdesselam.eticketbackend.exceptions.ticketNotfoundException
 import com.benalibenabdesselam.eticketbackend.model.Chat;
 import com.benalibenabdesselam.eticketbackend.model.Client;
 import com.benalibenabdesselam.eticketbackend.model.Ticket;
+import com.benalibenabdesselam.eticketbackend.model.User;
 import com.benalibenabdesselam.eticketbackend.repositories.ChatRepository;
 import com.benalibenabdesselam.eticketbackend.repositories.ClientRepository;
 import com.benalibenabdesselam.eticketbackend.repositories.TicketRepository;
@@ -29,7 +30,9 @@ public class TicketService {
     private final ClientRepository clientRepository;
 
 
-
+public List<Ticket> getTicketByClient(Long id){
+    return ticketRepository.findTicketByClient(id);
+}
 
     public Ticket addTicket(Ticket ticket) {
          ticket.setReference(UUID.randomUUID().toString());

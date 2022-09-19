@@ -1,7 +1,9 @@
 package com.benalibenabdesselam.eticketbackend.Web;
 
 import com.benalibenabdesselam.eticketbackend.model.Chat;
+import com.benalibenabdesselam.eticketbackend.model.Client;
 import com.benalibenabdesselam.eticketbackend.model.Ticket;
+import com.benalibenabdesselam.eticketbackend.model.User;
 import com.benalibenabdesselam.eticketbackend.services.TicketService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,6 +20,14 @@ import java.util.UUID;
 public class TicketRestAPI {
    private final TicketService ticketService;
 
+
+
+
+    @GetMapping("/myTicket/{id}")
+    public ResponseEntity<List<Ticket>> getTicketByClient(@PathVariable("id") Long id){
+        List<Ticket> tickets=ticketService.getTicketByClient(id);
+        return new ResponseEntity<>(tickets, HttpStatus.OK);
+    }
 
 
 
