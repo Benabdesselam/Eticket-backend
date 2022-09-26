@@ -48,6 +48,5 @@ public class Ticket implements Serializable {
     //support
     private String SRN;
     // private String num_telephone;
-    @OneToMany(mappedBy = "ticket",fetch = FetchType.LAZY)
-    private List<Chat> chats;
+
 }

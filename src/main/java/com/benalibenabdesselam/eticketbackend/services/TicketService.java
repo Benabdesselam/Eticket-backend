@@ -42,6 +42,11 @@ public List<Ticket> getTicketByClient(Long id){
          return ticketRepository.save(ticket);
     }
 
+
+
+
+
+
     public List<Ticket> findAllTickets() {
         return ticketRepository.findAll();
     }
@@ -64,17 +69,8 @@ public List<Ticket> getTicketByClient(Long id){
     }
 
 
-    public void AddChattoTicket(Chat chat, String ticketID) {
-       Ticket ticket=findByReference(ticketID);
-       chat.setChatTime(new Date());
-       chat.setTicket(ticket);
-       chatRepository.save(chat);
 
 
-    }
-    public void deleteChat(Long id) {
-        chatRepository.deleteChatById(id);
-    }
     public Chat updateChat(Chat chat) {
         return chatRepository.save(chat);
     }

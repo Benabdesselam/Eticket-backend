@@ -22,7 +22,8 @@ public interface TicketRepository extends JpaRepository<Ticket,String>, PagingAn
     List<Ticket> findTicketByClient(@Param("kw") Long id);
 
 
-    void deleteTicketByReference(String reference);
+
+        void deleteTicketByReference(String reference);
 
    Ticket findByReference(String reference);
    // void deleteChatById(Long id);

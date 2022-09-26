@@ -20,6 +20,9 @@ public class User{
     private String username;
     private String password;
     private String roles="USER";
+    @OneToMany(mappedBy = "sender",fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private List<Message> messages;
 
 
 

@@ -1,25 +1,31 @@
 package com.benalibenabdesselam.eticketbackend.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Chat implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false,updatable = false)
-    private Long id;
-    private String description;
-    private Date ChatTime;
-    @ManyToOne
-    private Ticket ticket;
+    @Column(name = "id")
+    private long id;
+
+    @Column(name = "messages")
+    @OneToMany(mappedBy = "chat",fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private List<Message> messages;
+
+
+
 
 }

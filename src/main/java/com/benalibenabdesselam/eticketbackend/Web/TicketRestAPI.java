@@ -49,11 +49,8 @@ public class TicketRestAPI {
        return new ResponseEntity<>(newTicket,HttpStatus.CREATED);
     }
 
-    @PostMapping("/addChat/{reference}")
-    public ResponseEntity<Chat> addChat(@RequestBody Chat chat,@PathVariable("reference")String reference){
-       ticketService.AddChattoTicket(chat,reference);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+
+
 
 
     @PutMapping("/updateTicket")
